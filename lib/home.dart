@@ -1,3 +1,6 @@
+import 'dart:math';
+
+import 'package:cara_coroa_flutter/resultado.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -10,7 +13,16 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   
   void _exibirResultado(){
-    
+
+    var itens = ["cara", "coroa"];
+    var numero = Random().nextInt(itens.length);
+    var resultado = itens[numero];
+
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+          builder: (context) => Resultado(resultado)
+      ));
   }
   
   @override
